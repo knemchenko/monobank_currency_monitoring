@@ -34,29 +34,29 @@ pip install -r requirements.txt
    python3 monobank.py
    ```
 
-4. **Create a `systemd` Service**:
-   - Create the service file:
-     ```bash
-     sudo nano /etc/systemd/system/mono_currency.service
-     ```
-   - Add the following content:
-     ```
-     [Unit]
-     Description=Monobank Currency Tracker
-     After=network.target
+   4. **Create a `systemd` Service**:
+    Create the service file:
+        ```bash
+        sudo nano /etc/systemd/system/mono_currency.service
+        ```
+       Add the following content:
+        ```
+        [Unit]
+        Description=Monobank Currency Tracker
+        After=network.target
 
-     [Service]
-     ExecStart=/usr/bin/python3 /root/mono_currency/monobank.py
-     WorkingDirectory=/root/mono_currency
-     Environment="PYTHONUNBUFFERED=1"
-     StandardOutput=journal
-     StandardError=journal
-     Restart=always
-     RestartSec=120
+        [Service]
+        ExecStart=/usr/bin/python3 /root/mono_currency/monobank.py
+        WorkingDirectory=/root/mono_currency
+        Environment="PYTHONUNBUFFERED=1"
+        StandardOutput=journal
+        StandardError=journal
+        Restart=always
+        RestartSec=120
 
-     [Install]
-     WantedBy=multi-user.target
-     ```
+        [Install]
+        WantedBy=multi-user.target
+        ```
 
 5. **Enable and Start the Service**:
    ```bash
