@@ -1,4 +1,8 @@
-requests
-telebot
-systemd-python
-python-dotenv
+requests>=2.31.0
+python-telegram-bot>=20.7  # асинхронна версія
+pymongo>=4.6.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0  # швидший парсер для beautifulsoup4
+systemd-python>=234 # Linux only
+python-dotenv>=1.0.0
+pytz
